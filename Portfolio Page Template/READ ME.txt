@@ -1,0 +1,31 @@
+/* Release 1.0 *\
+/* 27/07/2018 *\
+/* Author Paintball_202 *\
+
+
+Hi, first of all thank you for buying my recourse.
+
+If you have any issue that arn't listed below please contact me on discord: Paint#0001
+
+FAQ:
+
+
+Q: How do i change the colours?
+A: Go to the css folder and open style.css . In there you can find 'navbar','about-info' and all the other classes and change the 'color' tag.
+
+Q: How do i use my logo?
+A: Go to the 'img' folder and replace the exisiting logo with yours. //Depending on the size you might need to edit the css a bit. Search for 'navbar-brand'
+
+Q: How do i change the 'Service x'?
+A: Simple! Go to the js folder and open the main.js file. Change the Strings, Save, And reload!
+
+Q: How do i change the contact links?
+A: Open index.html, And scroll to the bottom, Find where is says '<div class="socialIcons">' and in there you can see all the social icons and links. Change it there!
+
+Q: How do i create another portfolio showcase page?
+A: Go to the 'p' folder and copy the exisiting folder 'omegamc' (At time of release) and paste it. Then simply change what you want and remove/add any other features.
+
+Q:Can you set this up for me?
+A: Yes for a small fee i can set this up for you. Just contact me on discord (Paint#0001)
+
+If you think this release isnt working please contact me on discord (Paint#0001) ASAP. And i will fix the issue.
