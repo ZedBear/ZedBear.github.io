@@ -1,251 +1,132 @@
-<!DOCTYPE html>
 <html>
-<head>
-  <title>ZedBearCode</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-  <link href="./css/scrolling-nav.css" rel="stylesheet">
-  <link href="./css/style.css" rel="stylesheet" />
-</head>
+    <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="//fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="releases/v5.14.0/css/all.css" >
+        <script src="clipboard_2/dist/clipboard.min.js"></script>
+        <link rel="shortcut icon" href="attachments/890142055408492577/890156627041337354/noavatar.png" type="image/png">
+		<title>ZedBear's Portfolio</title>
+		<meta property="og:title" content="ZedBear's Portfolio">
+		<meta property="og:url" content="https://zedbear.me">
+		<meta property="og:description" content="Hello, my name is ZedBear! I am a Minecraft Server Manager and Configurator.">
+		<meta content="#bf00ff" data-react-helmet="true" name="theme-color"/>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div class="HLUHeader">
+            <div class="HLUHeader-content">
+                <img src="attachments/website_logo.png" class="HLUHeaderAvatar"/>
+                <div class="HLUHeader-col">
+                    <p class="HLUHeader-miniHead">Hello! I'm</p>
+                    <p class="HLU-HeaderTitle">ZedBear</p>
+                    <p class="HLU-HeaderSlogan"><span class="hrbr"></span>A Minecraft Server Manager & Configurator</p>
+                </div>
+            </div>
+        </div>
+        <div class="HLU-Section">
+            <p class="HLU-SectionTitle"><span class="hrbr"></span> About Me</p>
+            <p class="HLU-SectionAbout">Hello, my name is ZedBear! I am a Minecraft Server Manager and configurator. I enjoy turning imaginations and dreams into reality - whether that is creating an astounding Minecraft server, or managing your amazing community! Also, I am from Brisbane, Australia.</p>
+            <div class="HLU-Specialities">
+                <div class="HLUSpecialities-box">
+                    <i class="fas fa-wrench"></i>
+                    <p>Server Setups</p>
+                </div>
+                <div class="HLUSpecialities-box">
+                    <i class="fas fa-cog"></i>
+                    <p>Configurations</p>
+                </div>
+                <div class="HLUSpecialities-box">
+                    <i class="fas fa-hammer"></i>
+                    <p>Community Management</p>
+                </div>
+            </div>
+        </div>
+        <div class="HLU-Section">
+            <p class="HLU-SectionTitle"><span class="hrbr"></span> Contact Me</p>
+            <div class="HLU-Specialities">
+                <div class="HLUSpecialities-box-wide">
+                    <i class="fas fa-store"></i>
+                    <p>SpigotMC</p>
+					<a href="https://www.spigotmc.org/threads/open-zedbears-server-setups-management-%C2%BB-modern-and-compendious-configurations.519101/#post-4231671" target="_blank" rel="noopener noreferrer">Services Thread</a>
+                </div>
+                <div class="HLUSpecialities-box-wide">
+                    <i class="fab fa-discord"></i>
+					<p>Discord</p>
+					<a href="https://discord.com/users/707176336099115048" target="_blank" rel="noopener noreferrer">ZedBear#6301</a>
+                </div>
+            </div>
+        </div>
+        <div class="HLU-Section">
+            <p class="HLU-SectionTitle" style="margin-bottom: 30px;"><span class="hrbr"></span> Portfolio</p>
+            <div class="dividerPortfolio">
+                <p class="ProjectNameDivider">Screenshots</p>
+            </div>
+            <div class="HLU-PortfolioBoxes">
+                <div class="HLU-PortfolioBox">
+                    <img src="attachments/essentials_messages.png" class="HLUPortfolioImg"/>
+                    <p>Essentials Messages</p>
+                </div>
+				<div class="HLU-PortfolioBox">
+                    <img src="attachments/holograms.png" class="HLUPortfolioImg"/>
+                    <p>Holograms</p>
+                </div>
+		        </div>
+				<div class="HLU-PortfolioBox">
+                    <img src="attachments/scoreboard.png" class="HLUPortfolioImg"/>
+                    <p>Scoreboard</p>
+                </div>
+		        </div>
+            </div>
+            <div class="dividerPortfolio">
+                <p class="ProjectNameDivider">Vouches</p>
+            </div>
+            <div class="HLU-PortfolioBoxes">
+                <div class="HLU-PortfolioBox">
+                    <img src="attachments/vouches/diamonds.png" class="HLUPortfolioImg"/>
+                    <p>Diamonds</p>
+                </div>
+                <div class="HLU-PortfolioBox">
+                    <img src="attachments/vouches/ggvmav.png" class="HLUPortfolioImg"/>
+                    <p>GGvMav</p>
+                </div>
+                <div class="HLU-PortfolioBox">
+                    <img src="attachments/vouches/icy_cloud20.png" class="HLUPortfolioImg"/>
+                    <p>Icy_Cloud20</p>
+                </div>
+		<div class="HLU-PortfolioBox">
+                    <img src="attachments/vouches/lavaninja666.png" class="HLUPortfolioImg"/>
+                    <p>LavaNinja666</p>
+                </div>
+		<div class="HLU-PortfolioBox">
+                    <img src="attachments/vouches/ocracked_.png" class="HLUPortfolioImg"/>
+                    <p>oCracked_</p>
+                </div>
+		<div class="HLU-PortfolioBox">
+                    <img src="attachments/vouches/Splitz_Wayz.png" class="HLUPortfolioImg"/>
+                    <p>Splitz_Wayz</p>
+                </div>
+		<div class="HLU-PortfolioBox">
+                    <img src="attachments/vouches/thundurh.png" class="HLUPortfolioImg"/>
+                    <p>Thundurh</p>
+                </div>
+            </div>
+            <div class="dividerPortfolio">
+                <p class="ProjectNameDivider">Servers I've Worked On</p>
+            </div>
+            <div class="HLU-PortfolioBoxes">
+                <div class="HLU-PortfolioBox">
+                    <p>CandyCloud</p>
+<p>CandyCloud is an in-proress massive Multiplayer Network, with over two and a half thousand people already in the Discord, this Survival Server will be like nothing else! With custom resource packs, MMMo RPG features and modern versions, there's nothing to miss out on!</p>
 
-<body>
-<section id="home">
-	<nav class="navbar navbar-default navbar-fixed-top" role=navigation>
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
-					<span class=sr-only>Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#"><img src="./img/14B0DE1B-5EFA-4D16-B1EC-5BA63274742D-modified.png"></a>
-			</div>
-			<div class="collapse navbar-collapse" id="navbar-collapse-main">
-				<ul class="nav navbar-nav navbar-right">
-					<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#home">Home</a></li>
-					<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
-					<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a></li>
-					<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#pricing">Pricing</a></li>
-					<li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-<div id="home">
-	<div class="landing-text">
-		<h1 id="zedbear">ZEDBEAR</h1>
-		<h2 id="element"></h2>
-		<a href="#contact" class=" js-scroll-trigger btn btn-default btn-lg">Contact Me</a>
-	</div>
-</div>
-</section>
+<p>My role in this server is the Content Manager, meaning I work with the Owner and other Operations staff to manage new updates, contact the community about them, and make sure full documentation is prepared for staff and players to understand the server, including permissions, commands, plugin explanations and basic guides.</p>
 
-
-<section id="about">
-	<div class="about">
-		<div class="container">
-			<div class="about-info">
-		    	<h1>ABOUT</h1>
-				<p>Hi there! I'm ZedBear or ZedBearCode, a Java Engineer specialising in the Spigot / Bukkit API! I make cool stuff with Minecraft, and I also play the game a lot! I have experience in making High Performance Minecraft Networks using Purpur and Waterfall. I've worked on Economy Survival in the past, and that's what I'm best at. I'm fueled by my unique approach to Minecraft Networks and can offer you unparralled services to bring your Minecraft Network up to scratch with everyone else! This includes, full setup, performance and optimisation, networks, website, store and discord, full plugin config, custom plugins and comprehensive, modern staff training.<br><br>
-
-				When I'm not doing this, I often play other servers, increasing my knowledge about them! I love SMP's but I also enjoy Hypixel and Hypixel Skyblock! I host my own Minecraft SMP for me and my friends, so I have the know how to become your next System Admin! I used to be baltop 4 on a large Econonomy Survival Server (10k players), which I learned a lot from and I still have life long friends from it today!<br><br></p>		
-			</div>
-		</div>
-	</div>
-</section>
-<section id="portfolio">
-	<div class="portfolio">
-		<div class="container container-fluid">
-			<div class="portfolio-info">
-				<h1>PORTFOLIO</h1>
-				<p>But what have I actually done? Check out my portfolio below.</p>
-			</div>
-			<div class="portfolio-cards row">
-				<div class="portfolio-card">
-					<a href="https://www.spigotmc.org/resources/easyemotes.94971/" class="preview"><img src="./img/05c46fd99810f4c5cb96eff278518305773a171c Cropped.png"></a>
-					  <div class="projectName">
-    					<div class="text">EasyEmotes</div>
-  					  </div>
-					<ul class="stats">
-						<li class="stat">
-							<h5 class="name">Version</h5>
-							<p class="value">1.4</p>
-						</li>
-						<li class="stat">
-							<h5 class="name">Downloads</h5>
-							<p class="value">65</p>
-						</li>
-					</ul>
-				</div>
-				<div class="portfolio-card">
-					<a href="https://www.spigotmc.org/resources/infinitebuckets-lite.95370/" class="preview"><img src="./img/Enchanted_Lava_Bucket.png"></a>
-					<div class="projectName">
-    					<div class="text">Infinite Buckets</div>
-  					  </div>
-					<ul class="stats">
-						<li class="stat">
-							<h5 class="name">Version</h5>
-							<p class="value">1.0</p>
-						</li>
-						<li class="stat">
-							<h5 class="name">Downloads</h5>
-							<p class="value">22</p>
-						</li>
-					</ul>
-				</div>
-				<div class="portfolio-card">
-					<a href="https://www.spigotmc.org/resources/butchermobs.94972/" class="preview"><img src="./img/mobie-hostile-zombie.jpg"></a>
-					<div class="projectName">
-    					<div class="text">Butcher Mobs</div>
-  					  </div>
-					<ul class="stats">
-						<li class="stat">
-							<h5 class="name">Version</h5>
-							<p class="value">1.0</p>
-						</li>
-						<li class="stat">
-							<h5 class="name">Downloads</h5>
-							<p class="value">23</p>
-						</li>
-					</ul>
-				</div>
-				<div class="portfolio-card">
-					<a href="" class="preview"><img src="./img/Zombie_Spawner.png"></a>
-					<div class="projectName">
-    					<div class="text">EasySpawners</div>
-  					  </div>
-					<ul class="stats">
-						<li class="stat">
-							<h5 class="name">Version</h5>
-							<p class="value">Coming soon!</p>
-						</li>
-						<li class="stat">
-							<h5 class="name">Downloads</h5>
-							<p class="value">Coming soon!</p>
-						</li>
-					</ul>
-				</div>
-				</div>
-		</div>
-	</div>
-</section>
-
-<section id="pricing">
-	<div class="pricing">
-		<div class="container container-fluid">
-			<div class="pricing-info">
-				<h1>PRICING</h1>
-				<p>Here's the pricing for 3 services I currently offer. Feel free to contact me if the service you need isn't here!</p>
-			</div>
-			<div class="pricing-data">
-				<h4>Custom Plugins and Config</h4>
-				<p>Single plugin config for a small - large plugin. Delivered within 2-4 days. Does not include Database support. Or, get a completely custom small or large plugin for your server.</p>
-		 </div>	
-		 <div class="col-md-4 pricing-grid">
-			<div class="price-bg">
-				<p class="price-label-2">$50+</p>	
-				<p class="price-label-22">Large Plugin</p>							
-				<ul class="count">
-					<li>Large Custom Plugin</li>
-					<li>Cool Commands</li>
-					<li>GUIs</li>
-					<li>Practically anything</li>
-				</ul>
-				<div class="price-button">
-					<a href="#" class="hvr-shutter-in-vertical">BUY NOW</a>
-				</div>	
-			</div>
-		</div>		
-		 
-				<div class="col-md-4 pricing-grid">
-					<div class="price-bg">
-						<p class="price-label-2">$10-25</p>	
-						<p class="price-label-22">Small Custom Plugin</p>							
-						<ul class="count">
-							<li>Fully custom plugin for your server</li>
-							<li>Commands</li>
-							<li>Config</li>
-							<li>Small Plugin</li>
-						</ul>
-						<div class="price-button">
-							<a href="#" class="hvr-shutter-in-vertical">BUY NOW</a>
-						</div>	
-					</div>
-				</div>
-				<div class="col-md-4 pricing-grid">
-					<div class="price-bg">
-						<p class="price-label-2">$2-10</p>	
-						<p class="price-label-22">Plugin Config</p>							
-						<ul class="count">
-							<li>Custom Plugin Config</li>
-							<li>Custom Messages</li>
-							<li>2-4 days</li>
-							<li>Small - large</li>
-						</ul>
-						<div class="price-button">
-							<a href="#" class="hvr-shutter-in-vertical">BUY NOW</a>
-						</div>	
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-<section id="contact">
-	<div class="contact">
-		<div class="container container-fluid">
-			<div class="contact-info">
-				<h1>CONTACT</h1>
-				<p>Find me on the web!</p>
-				<div class="socialIcons">
-					<a href="https://discordapp.com/users/707176336099115048" target="_blank"><img class="HoverBToW" src="./img/discord.png"></a>        
-					<a href="https://www.spigotmc.org/members/zmaha7.1011723/" target="_blank"><img class="HoverBToW" src="./img/spigot-og.png"></a>
-					<a href="https://www.mc-market.org/members/311486/" target="_blank"><img class="HoverBToW" src="./img/mcmarket1.png"></a>
-				</div>
-			</div>
-
-		</div>
-	</div>
-</section>
-
-
-<div class="footer">
-	<div class="container">
-		<!-- Footer Links -->
-	</div>
-		<a href="#home" id="scroll" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-</div>
-
-<!-- After Footer -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typeit/5.9.0/typeit.js" />
-    <script src="https://unpkg.com/randomcolor@0.5.3/randomColor.js"></script>
-    <!-- Custom JavaScript for this theme -->
-    <script src="js/main.js"></script>
-    <script src="js/scrolling-nav.js"></script>
-    		<script type="text/javascript">
-			jQuery(document).ready(function($) {
-				$(".scroll").click(function(event){		
-					event.preventDefault();
-					$('html,body').animate({scrollTop:$(this.hash).offset().top},900);
-				});
-			});
-		</script>
-	<script type="text/javascript">
-		$(document).ready(function(){ 
-    		$(window).scroll(function(){ 
-        		if ($(this).scrollTop() > 100) { 
-           		 $('#scroll').fadeIn(); 
-        		} else { 
-            		$('#scroll').fadeOut(); 
-        		} 
-    			});
-    		}); 
-	</script>
-</body>
+​<p>
+<p>IP: play.candycloud.org (offline)</p>
+<p>Discord: https://discord.gg/HVhFeWq5Pe</p>
+<p>Playerbase: 100 peak 350</p>
+                </div>
+            </div>
+        </div>
 </html>

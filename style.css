@@ -1,90 +1,286 @@
-﻿html, body{
-	height: 100%;
-	width: 100%;
+/* ##### MAIN ##### */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    margin: 0px;
+    background: #171717;
+    color: #bf00ff;
+}
+
+/* ##### HEADER ##### */
+
+.HLUHeader {
+    width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.HLUHeader-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.HLUHeaderAvatar {
+    width: 250px;
+    border-radius: 200px;
+}
+
+.HLUHeader-col {
+    margin-left: 50px;
+}
+
+.HLUHeader-miniHead {
+    font-weight: 500;
+    font-size: 18px;
+    opacity: 0.5;
+    margin-bottom: -5px;
+}
+
+.HLU-HeaderTitle {
+    font-size: 64px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.HLU-HeaderSlogan {
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    color: #bf00ff;
+}
+
+/* ##### SECTION ##### */
+
+.hrbr {
+    width: 50px;
+    height: 8px;
+    display: flex;
+    margin-right: 10px;
+    background: #bf00ff;
+    border-radius: 80px;
+}
+
+.HLU-Section {
+    width: 900px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.HLU-SectionTitle {
+    display: flex;
+    align-items: center;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.HLU-SectionAbout {
+    margin-top: 20px;
+    line-height: 35px;
+    color: white;
+    text-align: justify;
+}
+
+/* ##### SPECIALITIES ##### */
+
+.HLU-Specialities {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.HLUSpecialities-box {
+    background: #222222;
+    width: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    flex-direction: column;
+    border: 1px solid #353535;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,10%);
+    position: relative;
+    transition: 0.3s ease;
+    top: 0px;
+}
+
+.HLUSpecialities-box-img {
+    width: 80px;
+}
+
+.HLUSpecialities-box:hover {
+    transition: 0.3s ease;
+    position: relative;
+    top: -10px;
+}
+
+/* ##### CONTACT ##### */
+
+.HLUSpecialities-box-wide {
+    background: #222222;
+    width: 48%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    flex-direction: column;
+    border: 1px solid #353535;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,10%);
+    position: relative;
+    transition: 0.3s ease;
+    top: 0px;
 }
 
 
-.navbar {
-	background-color: #BF00FF;
-	padding: 1% 0;
-	font-size: 1.2em;
+.HLUSpecialities-box-wide:hover {
+    transition: 0.3s ease;
+    position: relative;
+    top: -10px;
 }
 
-.navbar-brand {
-	min-height: 55px;
-	padding: 0 15px 5px;
-}
-.navbar-default .navbar-nav li a {
-	color: #BF00FF;
+.HLUSpecialities-box-wide i {
+    font-size: 40px;
 }
 
-.navbar-default .navbar-nav li a:hover, .navbar-default .navbar-nav li a:active {
-	color: #FFF;
+.HLUSpecialities-box-wide p {
+    margin-top: 15px;
+    color: #fff;
+    font-weight: 700;
 }
 
-
-
-section {
- 	position: relative;
- 	width: 100%;
- 	height: 100%;
- 	display: table;
-}
-.home-wrap {
- 	clip: rect(0, auto, auto, 0);
- 	position: absolute;
- 	top: 0;
- 	left: 0;
- 	width: 100%;
- 	height: 100%;
-}
-#home {
-	background-image: url('./img/homeup.png');
- 	position: fixed;
- 	display: table;
- 	top: 0;
- 	left: 0;
- 	width: 100%;
-	height: 100%;
-	background-size: cover;
-	background-position: center center;
-	-webkit-transform: translateZ(0);
-          transform: translateZ(0);
-	will-change: transform;
-	z-index: -1;
-}
-.landing-text {
-	z-index: 100;
-	display: table-cell;
-	text-align: center;
-	vertical-align: middle;
+.HLUSpecialities-box-wide a {
+	font-size: 12px;
+	margin-top: 10px;
+    color: #fff;
+    font-weight: 350;
 }
 
+.HLUSpecialities-box i {
+    font-size: 40px;
+}
 
-figure {
-	position: relative;
-	width: 100%;
-	height: 60%;
+.HLUSpecialities-box p {
+    margin-top: 15px;
+    color: #fff;
+    font-weight: 700;
 }
-.fixed-wrap {
-	clip: rect(0, auto, auto, 0);
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+
+/* ##### PORTFOLIO ##### */
+
+.HLU-PortfolioBoxes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
 }
-#fixed {
-	background-image: url('img/background.jpg');
-	position: fixed;
-	display: block;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-size: cover;
-	background-position: center center;
-	-webkit-transform: translateZ(0);
-          transform: translateZ(0);
-	will-change: transform;
+
+.HLU-PortfolioBox {
+    width: 900px;
+    margin: 10px 0px;
+    background: #222222;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid #353535;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,10%);
+    padding: 15px;
+}
+
+.HLUPortfolioImg {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.HLU-PortfolioBox p {
+    width: 100%;
+    margin-top: 15px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.dividerPortfolio {
+    background: #222222;
+    padding: 15px 25px;
+    margin: 15px 0px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+	border: 1px solid #353535;
+    box-shadow: 0 3px 8px rgba(0,0,0,10%);
+
+/* ##### SIZES ##### */
+
+@media only screen and (max-width: 1000px) {
+    .HLUHeader {
+        width: 90%;
+    }
+
+    .HLU-Section {
+        width: 90%;
+    }
+
+    .HLU-Specialities {
+        flex-wrap: wrap;
+    }
+
+    .HLUSpecialities-box {
+        margin: 15px;
+    }
+
+    .HLU-PortfolioBox {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 660px) {
+    .HLUSpecialities-box {
+        width: 100%;
+    }
+
+    .HLUSpecialities-box-wide {
+        width: 100%;
+        margin: 15px;
+    }
+
+    .HLUHeader-content {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .HLUHeader-col {
+        margin-left: 0px;
+        margin-top: 35px;
+    }
+
+    .HLU-HeaderSlogan {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .HLU-HeaderSlogan .hrbr {
+        margin-top: 15px;
+    }
 }
