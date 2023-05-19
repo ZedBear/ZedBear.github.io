@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en-AU" dir="ltr">
+    <head> 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+        <link rel="stylesheet" href="assets/main.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <link rel="icon" href="favicon.jpg">
+        <title>Parliament Seat Calculator</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="columns">
+                <div class="column is-half">
+                    <div class="section">
+                        <h1 class="is-size-3" style="color: #212529; font-weight: 900;">Australian House of Representatives Seat Calculator</h1>
+                        <h1 class="subtitle" style="margin-bottom: 0.6rem !important; color: #585959;">Create your own custom seatmap. <br><br>Fill in the Party name in the Party field, the 3 letter abbreviation in the Abbreviation field, the number of seats they have in the Seats field, the order you want them to be in the order field, and pick or select the colour by clicking the colour field.</h1>
+                        <br />
+                        <div class="partyinputs-div">
+                            <form>
+                                <table style="width:95%" id="partyinputs-table">
+                                    <tr>
+                                        <th>Party</th>
+                                        <th>Acronym</th>
+                                        <th>Colour</th>
+                                        <th>Seats</th>
+                                        <th>Order</th>
+                                    </tr>
+                                    <tr id="partyTR1">
+                                        <td><input class="input is-small" type="text" id="party1" /></td>
+                                        <td><input class="input is-small" type="text" maxlength="3" onkeyup="this.value = this.value.toUpperCase();"id="acronym1" /></td>
+                                        <td><input class="input is-small" type="color" id="colour1" /></td>
+                                        <td><input class="input is-small" style="width:50px;" type="number" id="seats1" onkeyup="maxNumberFix('seats1', 0, 151);" min="0" max="151" style="width: 50px;" value="0" /></td>
+                                        <td><input class="input is-small" type="number" id="order1" onkeyup="maxNumberFix('order1', 1, 11);" min="1" max="11" style="width: 50px;" value="1" /><input type="hidden" value="1" class="partyid"></input></td></td>
+                                    </tr>
+                                </table>
+                            </form>
+                            <br />
+                            <div class="buttons are-small">
+                                <button class="button is-success" id="addPartyButton" onclick="newparty();">Add Party</button>
+                                <button class="button is-info" id="fillMapButton" onclick="fillmap();">Fill Seatmap</button>
+                                <button class="button is-link" id="dlSeatMap" onclick="generateMapDownload('seatmap.svg', document.getElementById('seatMapSVG').innerHTML);">Download Current Seatmap (SVG)</button>
+                                <a class="button is-link" id="dlSeatMapPNG">Download Current Seatmap (PNG)</a>
+                            </div>
+                        </div>
+                        <br />
+                        <div>
+                            <h3 class="is-size-5" style="font-weight: bold;">Party Information</h3>
+                            <table>
+                                <table id="partyinputs-table">
+                                <tr>
+                                    <th style="vertical-align: middle;"><span class="partyDot" style="background-color: #E13940;"></span></th>
+                                    <th>#E13940</th>
+                                    <th>ALP</th>
+                                    <th style="font-weight: 400;">Australian Labor Party</th>
+                                </tr>
+                                <tr>
+                                    <th style="vertical-align: middle;"><span class="partyDot" style="background-color: #1C4F9C;"></span></th>
+                                    <th>#1C4F9C</th>
+                                    <th>LIB</th>
+                                    <th style="font-weight: 400;">Liberal Party of Australia</th>
+                                </tr>
+                                <tr>
+                                    <th style="vertical-align: middle;"><span class="partyDot" style="background-color: #006946;"></span></th>
+                                    <th>#006946</th>
+                                    <th>NAT</th>
+                                    <th style="font-weight: 400;">National Party of Australia</th>
+                                </tr>
+                                <tr>
+                                    <th style="vertical-align: middle;"><span class="partyDot" style="background-color: #009C3D;"></span></th>
+                                    <th>#009C3D</th>
+                                    <th>GRN</th>
+                                    <th style="font-weight: 400;">Australian Greens</th>
+                                </tr>
+                                <tr>
+                                    <th style="vertical-align: middle;"><span class="partyDot" style="background-color: #5f5f5f;"></span></th>
+                                    <th>#5F5F5F</th>
+                                    <th>IND</th>
+                                    <th style="font-weight: 400;">Independents</th>
+                                </tr>
+                            </table>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-half" id="seatMapSVG">
+                    <svg id="pog" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="660" height="757" viewBox="0 0 300 344" style="width: 90%;">
+                        <text x="50%" y="10%" dominant-baseline="middle" text-anchor="middle" id="partyinfo-texts"></text>
+                        <circle id="seat1" r="7" transform="translate(149,0)" fill="#c9c9c9"></circle>
+                        <circle id="seat2" r="7" transform="translate(101,63)" fill="#c9c9c9"></circle>
+                        <circle id="seat3" r="7" transform="translate(79,25)" fill="#c9c9c9"></circle>
+                        <circle id="seat4" r="7" transform="translate(60,25)" fill="#c9c9c9"></circle>
+                        <circle id="seat5" r="7" transform="translate(41,25)" fill="#c9c9c9"></circle>
+                        <circle id="seat6" r="7" transform="translate(22,25)" fill="#c9c9c9"></circle>
+                        <circle id="seat7" r="7" transform="translate(79,44)" fill="#c9c9c9"></circle>
+                        <circle id="seat8" r="7" transform="translate(60,44)" fill="#c9c9c9"></circle>
+                        <circle id="seat9" r="7" transform="translate(41,44)" fill="#c9c9c9"></circle>
+                        <circle id="seat10" r="7" transform="translate(22,44)" fill="#c9c9c9"></circle>
+                        <circle id="seat11" r="7" transform="translate(79,63)" fill="#c9c9c9"></circle>
+                        <circle id="seat12" r="7" transform="translate(60,63)" fill="#c9c9c9"></circle>
+                        <circle id="seat13" r="7" transform="translate(41,63)" fill="#c9c9c9"></circle>
+                        <circle id="seat14" r="7" transform="translate(22,63)" fill="#c9c9c9"></circle>
+                        <circle id="seat15" r="7" transform="translate(79,82)" fill="#c9c9c9"></circle>
+                        <circle id="seat16" r="7" transform="translate(60,82)" fill="#c9c9c9"></circle>
+                        <circle id="seat17" r="7" transform="translate(41,82)" fill="#c9c9c9"></circle>
+                        <circle id="seat18" r="7" transform="translate(22,82)" fill="#c9c9c9"></circle>
+                        <circle id="seat19" r="7" transform="translate(79,101)" fill="#c9c9c9"></circle>
+                        <circle id="seat20" r="7" transform="translate(60,101)" fill="#c9c9c9"></circle>
+                        <circle id="seat21" r="7" transform="translate(41,101)" fill="#c9c9c9"></circle>
+                        <circle id="seat22" r="7" transform="translate(22,101)" fill="#c9c9c9"></circle>
+                        <circle id="seat23" r="7" transform="translate(79,120)" fill="#c9c9c9"></circle>
+                        <circle id="seat24" r="7" transform="translate(60,120)" fill="#c9c9c9"></circle>
+                        <circle id="seat25" r="7" transform="translate(41,120)" fill="#c9c9c9"></circle>
+                        <circle id="seat26" r="7" transform="translate(22,120)" fill="#c9c9c9"></circle>
+                        <circle id="seat27" r="7" transform="translate(79,139)" fill="#c9c9c9"></circle>
+                        <circle id="seat28" r="7" transform="translate(60,139)" fill="#c9c9c9"></circle>
+                        <circle id="seat29" r="7" transform="translate(41,139)" fill="#c9c9c9"></circle>
+                        <circle id="seat30" r="7" transform="translate(22,139)" fill="#c9c9c9"></circle>
+                        <circle id="seat31" r="7" transform="translate(79,158)" fill="#c9c9c9"></circle>
+                        <circle id="seat32" r="7" transform="translate(60,158)" fill="#c9c9c9"></circle>
+                        <circle id="seat33" r="7" transform="translate(41,158)" fill="#c9c9c9"></circle>
+                        <circle id="seat34" r="7" transform="translate(22,158)" fill="#c9c9c9"></circle>
+                        <!--- Top left section end-->
+
+                        <circle id="seat35" r="7" transform="translate(79,190)" fill="#c9c9c9"></circle>
+                        <circle id="seat36" r="7" transform="translate(60,190)" fill="#c9c9c9"></circle>
+                        <circle id="seat37" r="7" transform="translate(41,190)" fill="#c9c9c9"></circle>
+                        <circle id="seat38" r="7" transform="translate(79,211)" fill="#c9c9c9"></circle>
+                        <circle id="seat39" r="7" transform="translate(60,210)" fill="#c9c9c9"></circle>
+                        <circle id="seat40" r="7" transform="translate(41,209)" fill="#c9c9c9"></circle>
+                        <circle id="seat41" r="7" transform="translate(22,208)" fill="#c9c9c9"></circle>
+                        <circle id="seat42" r="7" transform="translate(83,231)" fill="#c9c9c9"></circle>
+                        <circle id="seat43" r="7" transform="translate(62,229)" fill="#c9c9c9"></circle>
+                        <circle id="seat44" r="7" transform="translate(42,228)" fill="#c9c9c9"></circle>
+                        <circle id="seat45" r="7" transform="translate(24,228)" fill="#c9c9c9"></circle>
+                        <circle id="seat46" r="7" transform="translate(68,243)" fill="#c9c9c9"></circle>
+                        <circle id="seat47" r="7" transform="translate(47,244)" fill="#c9c9c9"></circle>
+                        <circle id="seat48" r="7" transform="translate(27,247)" fill="#c9c9c9"></circle>
+                        <circle id="seat49" r="7" transform="translate(10,258)" fill="#c9c9c9"></circle>
+                        <circle id="seat50" r="7" transform="translate(55,258)" fill="#c9c9c9"></circle>
+                        <circle id="seat51" r="7" transform="translate(35,262)" fill="#c9c9c9"></circle>
+                        <circle id="seat52" r="7" transform="translate(20,273)" fill="#c9c9c9"></circle>
+                        <circle id="seat53" r="7" transform="translate(33,290)" fill="#c9c9c9"></circle>
+                        <circle id="seat54" r="7" transform="translate(48,278)" fill="#c9c9c9"></circle>
+                        <circle id="seat55" r="7" transform="translate(95,244)" fill="#c9c9c9"></circle>
+                        <circle id="seat56" r="7" transform="translate(80,258)" fill="#c9c9c9"></circle>
+                        <circle id="seat57" r="7" transform="translate(68,271)" fill="#c9c9c9"></circle>
+                        <circle id="seat58" r="7" transform="translate(61,290)" fill="#c9c9c9"></circle>
+                        <circle id="seat59" r="7" transform="translate(48,305)" fill="#c9c9c9"></circle>
+                        <circle id="seat60" r="7" transform="translate(68,319)" fill="#c9c9c9"></circle>
+                        <circle id="seat61" r="7" transform="translate(76,302)" fill="#c9c9c9"></circle>
+                        <circle id="seat62" r="7" transform="translate(81,282)" fill="#c9c9c9"></circle>
+                        <circle id="seat63" r="7" transform="translate(96,269)" fill="#c9c9c9"></circle>
+                        <circle id="seat64" r="7" transform="translate(96,291)" fill="#c9c9c9"></circle>
+                        <circle id="seat65" r="7" transform="translate(93,311)" fill="#c9c9c9"></circle>
+                        <circle id="seat66" r="7" transform="translate(87,329)" fill="#c9c9c9"></circle>
+                        <circle id="seat67" r="7" transform="translate(112,256)" fill="#c9c9c9"></circle>
+                        <circle id="seat68" r="7" transform="translate(113,276)" fill="#c9c9c9"></circle>
+                        <circle id="seat69" r="7" transform="translate(113,296)" fill="#c9c9c9"></circle>
+                        <circle id="seat70" r="7" transform="translate(111,316)" fill="#c9c9c9"></circle>
+                        <circle id="seat71" r="7" transform="translate(109,335)" fill="#c9c9c9"></circle>
+                        <circle id="seat72" r="7" transform="translate(132,259)" fill="#c9c9c9"></circle>
+                        <circle id="seat73" r="7" transform="translate(132,278)" fill="#c9c9c9"></circle>
+                        <circle id="seat74" r="7" transform="translate(132,297)" fill="#c9c9c9"></circle>
+                        <circle id="seat75" r="7" transform="translate(132,317)" fill="#c9c9c9"></circle>
+                        <circle id="seat76" r="7" transform="translate(132,337)" fill="#c9c9c9"></circle>
+                        <circle id="seat77" r="7" transform="translate(166,259)" fill="#c9c9c9"></circle>
+                        <circle id="seat78" r="7" transform="translate(166,278)" fill="#c9c9c9"></circle>
+                        <circle id="seat79" r="7" transform="translate(166,297)" fill="#c9c9c9"></circle>
+                        <circle id="seat80" r="7" transform="translate(166,317)" fill="#c9c9c9"></circle>
+                        <circle id="seat81" r="7" transform="translate(166,337)" fill="#c9c9c9"></circle>
+                        <circle id="seat82" r="7" transform="translate(186,256)" fill="#c9c9c9"></circle>
+                        <circle id="seat83" r="7" transform="translate(185,276)" fill="#c9c9c9"></circle>
+                        <circle id="seat84" r="7" transform="translate(185,296)" fill="#c9c9c9"></circle>
+                        <circle id="seat85" r="7" transform="translate(187,316)" fill="#c9c9c9"></circle>
+                        <circle id="seat86" r="7" transform="translate(189,335)" fill="#c9c9c9"></circle>
+                        <circle id="seat87" r="7" transform="translate(202,269)" fill="#c9c9c9"></circle>
+                        <circle id="seat88" r="7" transform="translate(202,291)" fill="#c9c9c9"></circle>
+                        <circle id="seat89" r="7" transform="translate(205,311)" fill="#c9c9c9"></circle>
+                        <circle id="seat90" r="7" transform="translate(211,329)" fill="#c9c9c9"></circle>
+                        <circle id="seat91" r="7" transform="translate(230,319)" fill="#c9c9c9"></circle>
+                        <circle id="seat92" r="7" transform="translate(222,302)" fill="#c9c9c9"></circle>
+                        <circle id="seat93" r="7" transform="translate(217,282)" fill="#c9c9c9"></circle>
+                        <circle id="seat94" r="7" transform="translate(250,305)" fill="#c9c9c9"></circle>
+                        <circle id="seat95" r="7" transform="translate(237,290)" fill="#c9c9c9"></circle>
+                        <circle id="seat96" r="7" transform="translate(265,290)" fill="#c9c9c9"></circle>
+                        <circle id="seat97" r="7" transform="translate(250,278)" fill="#c9c9c9"></circle>
+                        <circle id="seat98" r="7" transform="translate(230,271)" fill="#c9c9c9"></circle>
+                        <circle id="seat99" r="7" transform="translate(218,258)" fill="#c9c9c9"></circle>
+                        <circle id="seat100" r="7" transform="translate(203,244)" fill="#c9c9c9"></circle>
+                        <circle id="seat101" r="7" transform="translate(280,275)" fill="#c9c9c9"></circle>
+                        <circle id="seat102" r="7" transform="translate(265,265)" fill="#c9c9c9"></circle>
+                        <circle id="seat103" r="7" transform="translate(243,258)" fill="#c9c9c9"></circle>
+                        <circle id="seat104" r="7" transform="translate(287,258)" fill="#c9c9c9"></circle>
+                        <circle id="seat105" r="7" transform="translate(230,243)" fill="#c9c9c9"></circle>
+                        <circle id="seat106" r="7" transform="translate(272,248)" fill="#c9c9c9"></circle>
+                        <circle id="seat107" r="7" transform="translate(251,242)" fill="#c9c9c9"></circle>
+                        <circle id="seat108" r="7" transform="translate(215,228)" fill="#c9c9c9"></circle>
+                        <circle id="seat109" r="7" transform="translate(236,226)" fill="#c9c9c9"></circle>
+                        <circle id="seat110" r="7" transform="translate(256,225)" fill="#c9c9c9"></circle>
+                        <circle id="seat111" r="7" transform="translate(274,228)" fill="#c9c9c9"></circle>
+                        <circle id="seat112" r="7" transform="translate(276,208)" fill="#c9c9c9"></circle>
+                        <circle id="seat113" r="7" transform="translate(257,206)" fill="#c9c9c9"></circle>
+                        <circle id="seat114" r="7" transform="translate(238,207)" fill="#c9c9c9"></circle>
+                        <circle id="seat115" r="7" transform="translate(219,208)" fill="#c9c9c9"></circle>
+                        <circle id="seat116" r="7" transform="translate(257,187)" fill="#c9c9c9"></circle>
+                        <circle id="seat117" r="7" transform="translate(238,187)" fill="#c9c9c9"></circle>
+                        <circle id="seat118" r="7" transform="translate(219,187)" fill="#c9c9c9"></circle>
+                        <circle id="seat119" r="7" transform="translate(257,158)" fill="#c9c9c9"></circle>
+                        <circle id="seat120" r="7" transform="translate(277,158)" fill="#c9c9c9"></circle>
+                        <circle id="seat121" r="7" transform="translate(238,158)" fill="#c9c9c9"></circle>
+                        <circle id="seat122" r="7" transform="translate(219,158)" fill="#c9c9c9"></circle>
+                        <circle id="seat123" r="7" transform="translate(257,139)" fill="#c9c9c9"></circle>
+                        <circle id="seat124" r="7" transform="translate(277,139)" fill="#c9c9c9"></circle>
+                        <circle id="seat125" r="7" transform="translate(219,139)" fill="#c9c9c9"></circle>
+                        <circle id="seat126" r="7" transform="translate(238,139)" fill="#c9c9c9"></circle>
+                        <circle id="seat127" r="7" transform="translate(277,120)" fill="#c9c9c9"></circle>
+                        <circle id="seat128" r="7" transform="translate(257,120)" fill="#c9c9c9"></circle>
+                        <circle id="seat129" r="7" transform="translate(238,120)" fill="#c9c9c9"></circle>
+                        <circle id="seat130" r="7" transform="translate(257,101)" fill="#c9c9c9"></circle>
+                        <circle id="seat131" r="7" transform="translate(219,120)" fill="#c9c9c9"></circle>
+                        <circle id="seat132" r="7" transform="translate(277,101)" fill="#c9c9c9"></circle>
+                        <circle id="seat133" r="7" transform="translate(238,101)" fill="#c9c9c9"></circle>
+                        <circle id="seat134" r="7" transform="translate(219,101)" fill="#c9c9c9"></circle>
+                        <circle id="seat135" r="7" transform="translate(257,82)" fill="#c9c9c9"></circle>
+                        <circle id="seat136" r="7" transform="translate(277,82)" fill="#c9c9c9"></circle>
+                        <circle id="seat137" r="7" transform="translate(238,82)" fill="#c9c9c9"></circle>
+                        <circle id="seat138" r="7" transform="translate(219,82)" fill="#c9c9c9"></circle>
+                        <circle id="seat139" r="7" transform="translate(257,63)" fill="#c9c9c9"></circle>
+                        <circle id="seat140" r="7" transform="translate(277,63)" fill="#c9c9c9"></circle>
+                        <circle id="seat141" r="7" transform="translate(238,63)" fill="#c9c9c9"></circle>
+                        <circle id="seat142" r="7" transform="translate(219,63)" fill="#c9c9c9"></circle>
+                        <circle id="seat143" r="7" transform="translate(257,44)" fill="#c9c9c9"></circle>
+                        <circle id="seat144" r="7" transform="translate(277,44)" fill="#c9c9c9"></circle>
+                        <circle id="seat145" r="7" transform="translate(238,44)" fill="#c9c9c9"></circle>
+                        <circle id="seat146" r="7" transform="translate(219,44)" fill="#c9c9c9"></circle>
+                        <circle id="seat147" r="7" transform="translate(257,25)" fill="#c9c9c9"></circle>
+                        <circle id="seat148" r="7" transform="translate(277,25)" fill="#c9c9c9"></circle>
+                        <circle id="seat149" r="7" transform="translate(238,25)" fill="#c9c9c9"></circle>
+                        <circle id="seat150" r="7" transform="translate(219,25)" fill="#c9c9c9"></circle>
+                        <circle id="seat151" r="7" transform="translate(197,63)" fill="#c9c9c9"></circle>
+                        
+                    </svg>
+                </div>
+            </div>
+        </div> 
+        <h6 style="text-align: center; margin-bottom: 0.6rem !important; color: #878787;">Made by Sean, based on code from <a href="https://github.com/carolina2k22">Carolina</a>.</h1>
+    </body>
+    <script src="assets/main.js"></script>
+</html>
