@@ -3,7 +3,7 @@ var partyCount = 1;
 function newparty() {
     if (partyCount <= 10) {
         partyCount += 1;
-        $("#partyinputs-table").append(`<tr id="partyTR${partyCount}"><td><input type="text" class="input is-small" id="party${partyCount}"/></td><td><input class="input is-small" type="text" maxlength="3" onkeyup="this.value = this.value.toUpperCase();" id="acronym${partyCount}"/></td><td><input class="input is-small" type="color" id="colour${partyCount}"/></td><td><input class="input is-small" type="number" id="seats${partyCount}" onkeyup="maxNumberFix('seats${partyCount}', 0, 120);" min="0" max="120" value="0" style="width: 50px;"/></td><td><input class="input is-small" type="number" id="order${partyCount}" onkeyup="maxNumberFix('order${partyCount}', 1, 11);" min="1" max="11" value="${partyCount}" style="width: 50px;"/><input type="hidden" value="${partyCount}" class="partyid"></input></td></td><td onclick="deleteRow('partyTR${partyCount}');" style="cursor: pointer;"><i class="fas fa-trash-alt has-text-danger"></i></td></tr>`)
+        $("#partyinputs-table").append(`<tr id="partyTR${partyCount}"><td><input class="input is-small" type="text" maxlength="3" onkeyup="this.value = this.value.toUpperCase();" id="acronym${partyCount}"/></td><td><input class="input is-small" type="color" id="colour${partyCount}"/></td><td><input class="input is-small" type="number" id="seats${partyCount}" onkeyup="maxNumberFix('seats${partyCount}', 0, 120);" min="0" max="120" value="0" style="width: 50px;"/></td><td><input class="input is-small" type="number" id="order${partyCount}" onkeyup="maxNumberFix('order${partyCount}', 1, 11);" min="1" max="11" value="${partyCount}" style="width: 50px;"/><input type="hidden" value="${partyCount}" class="partyid"></input></td></td><td onclick="deleteRow('partyTR${partyCount}');" style="cursor: pointer;"><i class="fas fa-trash-alt has-text-danger"></i></td></tr>`)
     
         if (partyCount == 11) {
             document.getElementById("addPartyButton").setAttribute("disabled", true);
@@ -102,6 +102,7 @@ function fillmap() {
     });
 
     document.getElementById("partyinfo-texts").innerHTML = "";
+    document.getElementById("maptitle").innerHTML = document.getElementById("Title").value;
 
     var filledSeats = 0;
     partyInfoOrderer();
@@ -121,7 +122,7 @@ function fillmap() {
             if (filledSeats < Number((seat.id).substring(4))) {
                 if (seatsItr < seats.value) {
                     seat.style.fill = colour.value;
-                    seat.innerHTML = `<title>${name.value} Party</title>`;
+                    seat.innerHTML = `<title>${acronym.value} Party</title>`;
                     seatsItr += 1;
                     filledSeats += 1;
                 }

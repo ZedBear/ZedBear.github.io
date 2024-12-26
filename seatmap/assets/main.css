@@ -1,4 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@font-face {
+    font-family: ABCSans;
+    src: url(../abcsansnova-bold.ttf);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: ABCSans;
+    src: url(../abcsansnova-black.ttf);
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: ABCSans;
+    src: url(../abcsansnova-regular.ttf);
+    font-weight: 400;
+}
+
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -42,4 +60,14 @@ a.button {
     -webkit-appearance: button;
     -moz-appearance: button;
     appearance: button;
+}
+
+.maptitle {
+    color: #363636;
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+body, h1, h2, h3, h4, h5, h6, p {
+    font-family: ABCSans, sans-serif;
 }
